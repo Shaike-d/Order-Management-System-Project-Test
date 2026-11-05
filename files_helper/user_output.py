@@ -41,16 +41,63 @@ def show_all_orders():
 
 
 
-def find_order_by_id():
+def print_order_by_id():
     from .validation import is_this_a_number
     from .products_and_orders import orders
-    order_id = input("Enter the order id")
-    if is_this_a_number(order_id) == True:
-        for order in orders:
-            if order["id"] == order_id:
-                print(order)
-    else:
-        print("please enter a whole number")
+    while True:
+        order_id = input("Enter the order id ")
+        if is_this_a_number(order_id) == True:
+            if len(orders)<int(order_id):
+                print("id order out of range")
+                continue
+            else:
+                for order in orders:
+                    if int(order_id) == order["id"]:
+                        print(order)
+                break
+        else:
+            print("please enter a whole number")
+
+
+def close_order_by_id():
+    from .validation import is_this_a_number
+    from .products_and_orders import orders
+    while True:
+        order_id = input("Enter the order id ")
+        if is_this_a_number(order_id) == True:
+            if len(orders)<int(order_id):
+                print("id order out of range")
+                continue
+            else:
+                for order in orders:
+                    if order["id"] == int(order_id):
+                        if order["status"] == "close":
+                            print("the order is allrady closed")
+                        else:    
+                            order["status"] = "close"
+                break
+        else:
+            print("please enter a whole number")
+
+# def ficher_5():
+#     receivetion = len
+
+
+
+#     print("5 orders were received")
+
+
+
+
+
+
+
+# def close_order():
+#     from .validation import is_this_a_number
+#     order_id = input("Enter the order id")
+#     if is_this_a_number(order_id) == True:
+
+
 
             
 

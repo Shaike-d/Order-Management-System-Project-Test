@@ -79,12 +79,18 @@ def close_order_by_id():
         else:
             print("please enter a whole number")
 
-# def ficher_5():
-#     receivetion = len
-
-
-
-#     print("5 orders were received")
+def show_Summary():
+    from .validation import all_benefits_from_sail,best_sailer
+    from .products_and_orders import orders
+    receivetion = len(orders)
+    from .products_and_orders import orders
+    income = all_benefits_from_sail()
+    best_sale = best_sailer(1)
+    top_three = best_sailer(3)
+    print(f"{receivetion} orders were received")
+    print(f"Total revenues: {income}")
+    print(f"The most expensive sale: {best_sale}")
+    print(f"The 3 Most Expensive Sales: {top_three}")
 
 
 

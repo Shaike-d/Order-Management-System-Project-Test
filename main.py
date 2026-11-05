@@ -33,6 +33,15 @@ def main():
             else: 
                 f.close_order_by_id()
                 continue
+        elif choice == 5:
+            if len(f.orders) < 1:
+                print('No orders')
+                continue
+            else: 
+                f.show_Summary()
+                continue
+        elif choice == 6:
+            exit()
 
 
         else:
